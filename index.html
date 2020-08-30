@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>MANNAWELL</title>
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/shop.css" > -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <style>
+        .product-buttons {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .product-buttons a {
+            float: left;
+            width: 40px;
+            height: 40px;
+            font-size: 0;
+            color: transparent;
+            text-align: center;
+            background-color: #669543;
+        }
+
+        .product-buttons a.loading [class*='rt-icon'],
+        .product-buttons a.loading:before {
+            display: inline-block;
+            -webkit-animation: spin 2s infinite linear;
+            animation: spin 2s infinite linear;
+        }
+
+        .product-buttons a.loading [class*='rt-icon']:before,
+        .product-buttons a.loading:before:before {
+            content: "\e61b";
+        }
+
+        .product-buttons a.loading:before {
+            content: "\e61b";
+        }
+
+        .product-buttons a i,
+        .product-buttons a:before {
+            line-height: 40px;
+            font-size: 16px;
+        }
+
+        .product-buttons a:before {
+            font-family: 'rt-icons-2';
+            content: "\e626";
+        }
+
+        .product-buttons a.favorite_button {
+            background-color: #fff;
+            color: #669543;
+        }
+
+        .product-buttons a.favorite_button:before {
+            font-family: FontAwesome;
+            content: "\f004";
+        }
+
+        .product-buttons a:hover {
+            color: #1f232b;
+        }
+
+        .product-buttons a.add_to_cart {
+            background-color: #669543;
+            font-size: 0;
+            color: #ffffff;
+        }
+
+        .product-buttons a.add_to_cart:hover {
+            color: #1f232b;
+            background-color: #669543;
+        }
+
+        .product-buttons a.add_to_cart:before {
+            content: "\f07a";
+            font-family: FontAwesome;
+            font-size: 16px;
+        }
+
+        .product-buttons a.product_type_variable:before {
+            font-size: 20px;
+            content: "\e63f";
+        }
+
+
+        .product .item-media .price {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 7px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .swiper-banner {
+            width: 100%;
+            height: 100%;
+            min-height: 30em;
+            background: #000;
+        }
+
+        .banner {
+            font-size: 18px;
+            color: #fff;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 40px 60px;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 130%;
+            height: 100%;
+            -webkit-background-size: cover;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner .title {
+            font-size: 41px;
+            font-weight: 300;
+        }
+
+
+
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 25em;
+        }
+
+        .imageSlider {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .image {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- wrappers for visual page editor and boxed version of template -->
+    <div id="canvas">
+        <div id="box_wrapper">
+            <!-- template sections -->
+            <section class="page_topline ls ms table_section table_section_md">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-lg-9 text-center text-sm-left">
+                            <div class="inline-content big-spacing"> <span>
+                                    <i class="fa fa-map-marker highlight2 rightpadding_5" aria-hidden="true"></i>
+                                    123 Abshire Circle, Colorado
+                                </span> <span class="greylinks">
+                                    <i class="fa fa-pencil highlight2 rightpadding_5" aria-hidden="true"></i>
+                                    <a href="mailto:marijuana@example.com">marijuana@example.com</a>
+                                </span> <span>
+                                    <i class="fa fa-clock-o highlight2 rightpadding_5" aria-hidden="true"></i>
+                                    Working Hours: 24/7
+                                </span> </div>
+                        </div>
+                        <div class="col-sm-4 col-lg-3 text-center text-sm-right"> <a href="contacts.html"
+                                class="theme_button color3 block_button margin_0">Request a call back free</a> </div>
+                    </div>
+                </div>
+            </section>
+            <header class="page_header header_white toggler_right">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 display_table">
+                            <div class="header_left_logo display_table_cell"> <a href="index.html"
+                                    class="logo logo_with_text">
+                                    <img src="images/logo.png" alt="">
+                                    <span class="logo_text">
+                                        MANNAWELL
+                                    </span>
+                                </a> </div>
+                            <div class="header_mainmenu display_table_cell text-right">
+                                <!-- main nav start -->
+                                <nav class="mainmenu_wrapper">
+                                    <ul class="mainmenu nav sf-menu">
+                                        <li class="active"> <a href="index-2.html">Home</a>
+
+                                        </li>
+
+                                        <!-- contacts -->
+                                        <li> <a href="contact.html">Contact us</a>
+
+                                        </li>
+                                        <!-- eof contacts -->
+                                    </ul>
+                                </nav>
+                                <!-- eof main nav -->
+                                <!-- header toggler --><span class="toggle_menu"><span></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+
+            <section class="ls section_offset_teasers section_padding_top_10 section_padding_bottom_10">
+                <div class="swiper-container swiper-banner">
+                    <div class="parallax-bg" style="background-image:url(./images/slide01.jpg)"
+                        data-swiper-parallax="-23%"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide banner">
+                            <div class="title" data-swiper-parallax="-300">Passionately Growing, Processing, and
+                                Preserving Health</div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination swiper-pagination-white"></div>
+                    <!-- Add Navigation -->
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                </div>
+
+
+
+
+            </section>
+
+
+            <section id="about" class="ls section_padding_top_100 section_padding_bottom_130 columns_margin_bottom_20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-12">
+
+                            <div class="person_bio">
+                                <div class="avatar"> <img src="images/faces/01.jpg" alt=""> </div>
+                                <div class="person_name grey"> Carlos Lawson </div> <span class="small-text highlight4">
+                                    Founder of factory
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-8">
+                            <h2 class="section_header">Diamond Pod Processing</h2>
+                            <p>Utilizing a unique patented milling process,”fractalization,” MannaWell fractalizes
+                                cannabis flowers and biomass without a loss of potency, terpenes, or yield. We
+                                fractalize dried, whole plant cannabis at room temperature to the consistency of
+                                confectionery flour (Diamond Fleur). Fractalization allows for customizing CBD/THC
+                                ratios and terpene profiles, and provides for various extraction efficiencies. We are
+                                currently evaluating customized blends with other botanicals as well. </p>
+                            <p>Utilizing a unique patented milling process,”fractalization,” MannaWell fractalizes
+                                cannabis flowers and biomass without a loss of potency, terpenes, or yield. We
+                                fractalize dried, whole plant cannabis at room temperature to the consistency of
+                                confectionery flour (Diamond Fleur). Fractalization allows for customizing CBD/THC
+                                ratios and terpene profiles, and provides for various extraction efficiencies. We are
+                                currently evaluating customized blends with other botanicals as well. </p>
+                            <p class="bold grey">We will continue to demonstrate our commitment to small growers by
+                                expanding the market for locally grown cannabis Diamond Fleur and for the
+                                rapidly-expanding, unique product lines it supports.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="products" class="ds parallax page_shop section_padding_top_150 section_padding_bottom_150">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-sm-8">
+
+                            <div class="swiper-products">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide product">
+                                        <article
+                                            class="product ls vertical-item content-padding rounded overflow_hidden loop-color">
+                                            <div class="item-media"> <img src="images/shop/02.png" alt="" /> <span
+                                                    class="price main_bg_color">
+                                                    <ins>
+                                                        <span class="amount">$50.00</span> </ins>
+                                                </span>
+                                                <div class="product-buttons"><a href="#" class="add_to_cart">
+                                                        <span class="sr-only">Add to favorite</span>
+                                                    </a> </div>
+                                            </div>
+                                            <div class="item-content">
+                                                <div class="star-rating" title="Rated 5.0 out of 5"> <span
+                                                        style="width:100%">
+                                                        <strong class="rating">5.0</strong> out of 5
+                                                    </span> </div>
+                                                <h4 class="entry-title topmargin_5"> <a
+                                                        href="shop-product-right.html">Cannabis
+                                                        Flowers</a> </h4>
+                                                <p class="content-3lines-ellipsis">Swine meatball shankle cow kielbasa
+                                                    burgdoggen shoulder andouille pork loin brisket leberkas.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide product">
+                                        <article
+                                            class="product ls vertical-item content-padding rounded overflow_hidden loop-color">
+                                            <div class="item-media"> <img src="images/shop/01.png" alt="" /> <span
+                                                    class="price main_bg_color">
+                                                    <ins>
+                                                        <span class="amount">$85.00</span> </ins>
+                                                </span>
+                                                <div class="product-buttons">  <a href="#" class="add_to_cart">
+                                                        <span class="sr-only">Add to favorite</span>
+                                                    </a> </div>
+                                            </div>
+                                            <div class="item-content">
+                                                <div class="star-rating" title="Rated 4.0 out of 5"> <span
+                                                        style="width:80%">
+                                                        <strong class="rating">4.0</strong> out of 5
+                                                    </span> </div>
+                                                <h4 class="entry-title topmargin_5"> <a
+                                                        href="shop-product-right.html">Cannabis
+                                                        Pre-Rolls</a> </h4>
+                                                <p class="content-3lines-ellipsis">Pork andouille pig, beef ribs
+                                                    prosciutto
+                                                    sausage picanha leberkas ham hock cow. Kevin doner filet mignon.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide product">
+                                        <article
+                                            class="product ls vertical-item content-padding rounded overflow_hidden loop-color">
+                                            <div class="item-media"> <img src="images/shop/04.jpg" alt="" /> <span
+                                                    class="price main_bg_color">
+                                                    <ins>
+                                                        <span class="amount">$99.00</span> </ins>
+                                                </span>
+                                                <div class="product-buttons">  <a href="#" class="add_to_cart">
+                                                        <span class="sr-only">Add to favorite</span>
+                                                    </a> </div>
+                                            </div>
+                                            <div class="item-content">
+                                                <div class="star-rating" title="Rated 3.0 out of 5"> <span
+                                                        style="width:60%">
+                                                        <strong class="rating">3.0</strong> out of 5
+                                                    </span> </div>
+                                                <h4 class="entry-title topmargin_5"> <a
+                                                        href="shop-product-right.html">Concentrates</a> </h4>
+                                                <p class="content-3lines-ellipsis">Biltong ribeye cupim meatloaf, burgd
+                                                    shoulder
+                                                    jerky pork loin turducken alcatra venison sirloin.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="swiper-slide product">
+                                        <article
+                                            class="product ls vertical-item content-padding rounded overflow_hidden loop-color">
+                                            <div class="item-media"> <img src="images/shop/04.jpg" alt="" /> <span
+                                                    class="price main_bg_color">
+                                                    <ins>
+                                                        <span class="amount">$99.00</span> </ins>
+                                                </span>
+                                                <div class="product-buttons">  <a href="#" class="add_to_cart">
+                                                        <span class="sr-only">Add to favorite</span>
+                                                    </a> </div>
+                                            </div>
+                                            <div class="item-content">
+                                                <div class="star-rating" title="Rated 3.5 out of 5"> <span
+                                                        style="width:70%">
+                                                        <strong class="rating">3.5</strong> out of 5
+                                                    </span> </div>
+                                                <h4 class="entry-title topmargin_5"> <a
+                                                        href="shop-product-right.html">Cannabis
+                                                        Oil</a> </h4>
+                                                <p class="content-3lines-ellipsis">Pancetta t-bone ball tip pig buffalo,
+                                                    fatback
+                                                    filet mignon brisket frankfurter boudin jowl tenderloin.</p>
+                                            </div>
+                                        </article>
+                                    </div>
+
+
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination"></div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="technologies"
+                class="ls section_padding_top_150 section_padding_bottom_150 columns_margin_bottom_40">
+                <div class="container">
+                    <h2 class="section_header text-center">Our Commitment</h2>
+                    <div class="row">
+                      
+                        <div class="col-md-12 col-lg-12">
+                            <div class="row row-flex">
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="media bottommargin_25">
+                                        <div class="media-left media-middle"> <img src="images/icons/01.png" alt="">
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h4 class="entry-title hover-color2"> <a href="#">No Heat</a>
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="media bottommargin_25">
+                                        <div class="media-left media-middle"> <img src="images/icons/02.png" alt="">
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h4 class="entry-title hover-color2"> <a href="#">No Chemicals</a> </h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-4 col-sm-6">
+                                    <div class="media bottommargin_25">
+                                        <div class="media-left media-middle"> <img src="images/icons/03.png" alt="">
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h4 class="entry-title hover-color2"> <a href="#">No Grinding</a> </h4>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section id="blog"
+                class="ds parallax page_blog section_padding_top_150 section_padding_bottom_130 columns_margin_bottom_30 columns_padding_25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3"> <span class="small-text big highlight">
+                                Our blog
+                            </span>
+                            <h2 class="section_header">Latest Plant News</h2>
+                            <div class="widget widget_categories topmargin_50">
+                                <ul class="greylinks">
+                                    <li class=""> <a href="blog-left.html">Products</a> </li>
+                                    <li class=""> <a href="blog-left.html">Plant</a> </li>
+                                    <li class=""> <a href="blog-left.html">News</a> </li>
+                                    <li class=""> <a href="blog-left.html">Dispensary</a> </li>
+                                </ul>
+                            </div>
+                            <p class="topmargin_40"> <a href="blog-left.html" class="theme_button color3">
+                                    Go to Blog
+                                </a> </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="owl-carousel" data-nav="true" data-dots="false" data-responsive-lg="3"
+                                data-responsive-md="2" data-responsive-sm="2">
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/08.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            15 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">Products</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">We Launches New CBD
+                                                    Product</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Tenderloin pork loin leberkas buffalo, sirloin landjaeger short...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/03.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            23 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">Plant</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">Provides Update on
+                                                    30,000 Sq.</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Jerky rump venison turk tenderloin beef turduck. Pork loin picanha...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/10.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            31 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">News</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">Overview of 2017
+                                                    Highlights</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Pork loin picanha hambu prosciutto buffalo, chick kielbasa strip...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/04.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            15 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">Products</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">We Launches New CBD
+                                                    Product</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Tenderloin pork loin leberkas buffalo, sirloin landjaeger short...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/06.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            23 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">Plant</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">Provides Update on
+                                                    30,000 Sq.</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Jerky rump venison turk tenderloin beef turduck. Pork loin picanha...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="post vertical-item content-padding rounded overflow_hidden loop-color">
+                                    <div class="item-media entry-thumbnail"> <img src="images/events/11.jpg" alt="">
+                                    </div>
+                                    <div class="item-content ls">
+                                        <header class="entry-header">
+                                            <div class="entry-meta content-justify small-text"> <span class="greylinks">
+                                                    <a href="blog-single-left.html">
+                                                        <time datetime="2017-10-03T08:50:40+00:00">
+                                                            31 jan, 2018</time>
+                                                    </a>
+                                                </span> <span class="categories-links highlightlinks">
+                                                    <a href="blog-left.html">News</a>
+                                                </span> </div>
+                                            <h4 class="entry-title"> <a href="blog-single-left.html">Overview of 2017
+                                                    Highlights</a> </h4>
+                                        </header>
+                                        <div class="entry-content content-3lines-ellipsis">
+                                            <p>Pork loin picanha hambu prosciutto buffalo, chick kielbasa strip...</p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="testimonials" class="ls section_padding_top_150 section_padding_bottom_150">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-4"> <span class="small-text big highlight2">
+                                Testimonials
+                            </span>
+                            <h2 class="section_header">Our Clients Said</h2>
+                            <div id="testimonials-dots" class="owl-dots topmargin_50"></div>
+                        </div>
+                        <div class="col-sm-8 col-lg-9">
+                            <div class="owl-carousel" data-responsive-lg="3" data-responsive-md="2" data-nav="false"
+                                data-dots="true" data-dots-container="#testimonials-dots">
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/02.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Philip Morton</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Bacon short loin capicola, turkey burgdoggen beef meatloaf pig sausage leberkas
+                                        landjaeger.» </p>
+                                </blockquote>
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/03.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Martha Adkins</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Kevin ball tip bresaola leberkas meatball. Pastrami tongue filet mignon
+                                        burgdoggen.»</p>
+                                </blockquote>
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/04.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Joel White</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Andouille rump landjaeger chuck. Strip steak pancetta cow ham biltong chuck
+                                        t-bone ribeye.» </p>
+                                </blockquote>
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/05.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Philip Morton</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Bacon short loin capicola, turkey burgdoggen beef meatloaf pig sausage leberkas
+                                        landjaeger.» </p>
+                                </blockquote>
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/06.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Martha Adkins</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Kevin ball tip bresaola leberkas meatball. Pastrami tongue filet mignon
+                                        burgdoggen.»</p>
+                                </blockquote>
+                                <blockquote class="loop-color">
+                                    <div class="media bottommargin_20">
+                                        <div class="media-left media-middle">
+                                            <div class="avatar"> <img src="images/faces/07.jpg" alt=""> </div>
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <h5>Joel White</h5> <span class="small-text highlight">Client</span>
+                                        </div>
+                                    </div>
+                                    <p>«Andouille rump landjaeger chuck. Strip steak pancetta cow ham biltong chuck
+                                        t-bone ribeye.» </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <section>
+                <h2 class="section_header text-center">Photo Gallery</h2>
+                <div class="swiper-container imageSlider">
+                    <div class="swiper-wrapper ">
+                        <div class="swiper-slide image" style="background-image:url(./img/01.jpg)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/02.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/03.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/04.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/05.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/02.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/03.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/04.webp)"></div>
+                        <div class="swiper-slide image" style="background-image:url(./img/05.webp)"></div>
+                        
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </section>
+            <section id="subscribe"
+                class="cs main_color2 background_cover overlay_color page_subscribe section_padding_top_75 section_padding_bottom_75 table_section table_section_lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-3 text-center text-md-left"> <span class="small-text big black">
+                                Subscribe now to
+                            </span>
+                            <h2 class="section_header">Our Newsletter</h2>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-12 col-md-offset-0 col-lg-9">
+                            <div class="widget widget_mailchimp">
+                                <form class="signup" action="http://webdesign-finder.com/html/canabia/" method="get">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="form-group margin_0"> <input
+                                                    class="form-control mailchimp_fullname" name="fullname" required=""
+                                                    type="text" placeholder="Your Full Name*"> </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-4">
+                                            <div class="form-group margin_0"> <input
+                                                    class="mailchimp_email form-control" name="email" required=""
+                                                    type="email" placeholder="Your Email Address*"> </div>
+                                        </div>
+                                        <div class="col-xs-12 col-md-4"> <button type="submit"
+                                                class="theme_button color2 block_button margin_0">Subscribe to
+                                                newsletter</button> </div>
+                                        <div class="col-sm-12 margin_0">
+                                            <div class="response"></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="page_footer ds section_padding_top_150 section_padding_bottom_130 columns_margin_bottom_30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 text-center">
+                            <div class="logo vertical_logo topmargin_20"> <img src="images/logo.png" alt=""> <span
+                                    class="logo_text">
+                                    MANNAWELL
+
+                                </span> </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_text greylinks color2">
+                                <h4 class="widget-title"> Our Contacts </h4>
+                                <div class="media small-media">
+                                    <div class="media-left"> <i class="fa fa-map-marker highlight2"></i> </div>
+                                    <div class="media-body">123 Abshire Circle, Colorado</div>
+                                </div>
+                                <div class="media small-media">
+                                    <div class="media-left"> <i class="fa fa-pencil highlight2"></i> </div>
+                                    <div class="media-body"> <a
+                                            href="mailto:marijuana@example.com">marijuana@example.com</a> </div>
+                                </div>
+                                <div class="media small-media">
+                                    <div class="media-left"> <i class="fa fa-internet-explorer highlight2"></i> </div>
+                                    <div class="media-body"> <a href="#">www.example.com</a> </div>
+                                </div>
+                                <div class="media small-media">
+                                    <div class="media-left"> <i class="fa fa-phone highlight2"></i> </div>
+                                    <div class="media-body">(443) 614-7279</div>
+                                </div>
+                                <div class="media small-media">
+                                    <div class="media-left"> <i class="fa fa-clock-o highlight2"></i> </div>
+                                    <div class="media-body">Working Hours: 24/7</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 text-center text-sm-left">
+                            <div class="widget widget_recent_posts">
+                                <h4 class="widget-title">Recent Posts</h4>
+                                <ul>
+                                    <li class="media">
+                                        <div class="media-left media-middle"> <img src="images/recent_post1.jpg" alt="">
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <p class="darklinks"> <a href="blog-single-left.html">Rump groud round shan
+                                                    bacon chop.</a> </p> <span class="small-text highlightlinks">
+                                                <a href="blog-single-left.html">
+                                                    <time datetime="2017-10-03T08:50:40+00:00">
+                                                        11 jan, 2018</time>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li class="media">
+                                        <div class="media-left media-middle"> <img src="images/recent_post2.jpg" alt="">
+                                        </div>
+                                        <div class="media-body media-middle">
+                                            <p class="darklinks"> <a href="blog-single-left.html">Bresaola jerky short
+                                                    ribs pastrami shank.</a> </p> <span
+                                                class="small-text highlightlinks">
+                                                <a href="blog-single-left.html">
+                                                    <time datetime="2017-10-03T08:50:40+00:00">
+                                                        23 jan, 2018</time>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="col-lg-3 col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0 text-center">
+                            <div class="widget widget_text"> <a href="#">
+                                    <img src="images/banner.png" alt="">
+                                </a> </div>
+                        </div> -->
+                    </div>
+                </div>
+            </footer>
+            <section class="ds ms page_copyright section_padding_50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p>&copy; All Rights Reserved.</p>
+                            <div class="social-links"> <a class="social-icon border-icon rounded-icon socicon-facebook"
+                                    href="#" title="Facebook"></a> <a
+                                    class="social-icon border-icon rounded-icon socicon-twitter" href="#"
+                                    title="Twitter"></a> <a class="social-icon border-icon rounded-icon socicon-google"
+                                    href="#" title="Google"></a> </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- eof #box_wrapper -->
+    </div>
+    <script>
+        var swiper2 = new Swiper('.swiper-products', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            freeMode: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+        });
+
+
+        var swiper = new Swiper('.swiper-banner', {
+            speed: 600,
+            parallax: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        var swiper3 = new Swiper('.imageSlider', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+
+    </script>
+</body>
+
+
+<!-- Mirrored from webdesign-finder.com/html/canabia/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Aug 2020 14:35:19 GMT -->
+
+</html>
