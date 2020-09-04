@@ -86,6 +86,11 @@
             font-size: 0;
             color: #ffffff;
         }
+        @media only screen and (max-width: 600px){
+            .banner .title{
+                font-size: 24px!important;
+            }
+        }
 
         .product-buttons a.add_to_cart:hover {
             color: #1f232b;
@@ -156,6 +161,9 @@
         .banner .title {
             font-size: 41px;
             font-weight: 300;
+            background: #00000054;
+            padding: 2em;
+            border-radius: 4em;
         }
 
 
@@ -247,7 +255,7 @@
 
             <section class="ls section_offset_teasers section_padding_top_10 section_padding_bottom_10">
                 <div class="swiper-container swiper-banner">
-                    <div class="parallax-bg" style="background-image:url(./images/slide01.jpg)"
+                    <div class="parallax-bg" style="background-image:url(./img/03.webp);background-size: contain;"
                         data-swiper-parallax="-23%"></div>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide banner">
@@ -279,9 +287,9 @@
                             <div class="person_bio">
                                 <div class="avatar"> <img src="images/faces/01.jpg" alt=""> </div>
                                 <span class="small-text highlight4">
-                                  
+
                                 </span>
-                                <div class="person_name grey">   Our Commitment </div> 
+                                <div class="person_name grey"> Our Commitment </div>
                             </div>
 
                             <div class="media bottommargin_25">
@@ -333,7 +341,7 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="col-lg-12 col-sm-8">
+                        <div class="col-12 col-lg-12 col-sm-8">
 
                             <div class="swiper-products">
                                 <div class="swiper-wrapper">
@@ -453,8 +461,8 @@
                     </div>
                 </div>
             </section>
-            
-            <section style="padding: 5em;">
+
+            <section style="padding: 5em 0;">
                 <h2 class="section_header text-center">Photo Gallery</h2>
                 <div class="swiper-container imageSlider">
                     <div class="swiper-wrapper ">
@@ -477,31 +485,17 @@
             <section id="blog"
                 class="ds parallax page_blog section_padding_top_150 section_padding_bottom_130 columns_margin_bottom_30 columns_padding_25">
                 <div class="container">
+                    <h2 class="section_header text-center">Our Articals</h2>
                     <div class="row">
-                        <div class="col-sm-3"> <span class="small-text big highlight">
-                                Our blog
-                            </span>
-                            <h2 class="section_header">Latest Plant News</h2>
-                            <div class="widget widget_categories topmargin_50">
-                                <ul class="greylinks">
-                                    <li class=""> <a href="blog-left.html">Products</a> </li>
-                                    <li class=""> <a href="blog-left.html">Plant</a> </li>
-                                    <li class=""> <a href="blog-left.html">News</a> </li>
-                                    <li class=""> <a href="blog-left.html">Dispensary</a> </li>
-                                </ul>
-                            </div>
-                            <p class="topmargin_40"> <a href="blog-left.html" class="theme_button color3">
-                                    Go to Blog
-                                </a> </p>
-                        </div>
-                        <div class="col-sm-9">
+
+                        <div class="col-sm-12">
 
                             <div class="swiper-container blog">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide post">
                                         <article
                                             class="post vertical-item content-padding rounded overflow_hidden loop-color">
-                                            <div class="entry-thumbnail"> <img src="images/events/08.jpg" alt="">
+                                            <div class="entry-thumbnail"> <img src="./img/03.webp" alt="">
                                             </div>
                                             <div class="item-content ls">
                                                 <header class="entry-header">
@@ -528,7 +522,7 @@
                                     <div class="swiper-slide post">
                                         <article
                                             class="post vertical-item content-padding rounded overflow_hidden loop-color">
-                                            <div class="entry-thumbnail"> <img src="images/events/10.jpg" alt="">
+                                            <div class="entry-thumbnail"> <img src="./img/02.webp" alt="">
                                             </div>
                                             <div class="item-content ls">
                                                 <header class="entry-header">
@@ -543,7 +537,7 @@
                                                         </span> </div>
                                                     <h4 class="entry-title"> <a href="blog-single-left.html">Overview of
                                                             2017
-                                                            Highlights</a> </h4>
+                                                            Top Highlights </a> </h4>
                                                 </header>
                                                 <div class="entry-content content-3lines-ellipsis">
                                                     <p>Pork loin picanha hambu prosciutto buffalo, chick kielbasa
@@ -555,7 +549,7 @@
                                     <div class="swiper-slide post">
                                         <article
                                             class="post vertical-item content-padding rounded overflow_hidden loop-color">
-                                            <div class="entry-thumbnail"> <img src="images/events/04.jpg" alt="">
+                                            <div class="entry-thumbnail"> <img src="./img/04.webp" alt="">
                                             </div>
                                             <div class="item-content ls">
                                                 <header class="entry-header">
@@ -627,8 +621,8 @@
                     </span>
                     <h2 class="section_header">Our Clients Said</h2>
                     <div class="row">
-                      
-                        <div class="col-sm-8 col-lg-12">
+
+                        <div class="col-12 col-sm-8 col-lg-12">
                             <div class="swiper-container testimonial">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide client">
@@ -648,19 +642,20 @@
                                         </blockquote>
                                     </div>
                                     <div class="swiper-slide client">
-                                       
-                                <blockquote class="loop-color">
-                                    <div class="media bottommargin_20">
-                                        <div class="media-left media-middle">
-                                            <div class="avatar"> <img src="images/faces/03.jpg" alt=""> </div>
-                                        </div>
-                                        <div class="media-body media-middle">
-                                            <h5>Martha Adkins</h5> <span class="small-text highlight">Client</span>
-                                        </div>
-                                    </div>
-                                    <p>«Kevin ball tip bresaola leberkas meatball. Pastrami tongue filet mignon
-                                        burgdoggen.»</p>
-                                </blockquote>
+
+                                        <blockquote class="loop-color">
+                                            <div class="media bottommargin_20">
+                                                <div class="media-left media-middle">
+                                                    <div class="avatar"> <img src="images/faces/03.jpg" alt=""> </div>
+                                                </div>
+                                                <div class="media-body media-middle">
+                                                    <h5>Martha Adkins</h5> <span
+                                                        class="small-text highlight">Client</span>
+                                                </div>
+                                            </div>
+                                            <p>«Kevin ball tip bresaola leberkas meatball. Pastrami tongue filet mignon
+                                                burgdoggen.»</p>
+                                        </blockquote>
                                     </div>
                                     <div class="swiper-slide client">
                                         <blockquote class="loop-color">
@@ -672,7 +667,8 @@
                                                     <h5>Joel White</h5> <span class="small-text highlight">Client</span>
                                                 </div>
                                             </div>
-                                            <p>«Andouille rump landjaeger chuck. Strip steak pancetta cow ham biltong chuck
+                                            <p>«Andouille rump landjaeger chuck. Strip steak pancetta cow ham biltong
+                                                chuck
                                                 t-bone ribeye.» </p>
                                         </blockquote>
                                     </div>
@@ -683,10 +679,12 @@
                                                     <div class="avatar"> <img src="images/faces/05.jpg" alt=""> </div>
                                                 </div>
                                                 <div class="media-body media-middle">
-                                                    <h5>Philip Morton</h5> <span class="small-text highlight">Client</span>
+                                                    <h5>Philip Morton</h5> <span
+                                                        class="small-text highlight">Client</span>
                                                 </div>
                                             </div>
-                                            <p>«Bacon short loin capicola, turkey burgdoggen beef meatloaf pig sausage leberkas
+                                            <p>«Bacon short loin capicola, turkey burgdoggen beef meatloaf pig sausage
+                                                leberkas
                                                 landjaeger.» </p>
                                         </blockquote>
                                     </div>
@@ -697,7 +695,8 @@
                                                     <div class="avatar"> <img src="images/faces/06.jpg" alt=""> </div>
                                                 </div>
                                                 <div class="media-body media-middle">
-                                                    <h5>Martha Adkins</h5> <span class="small-text highlight">Client</span>
+                                                    <h5>Martha Adkins</h5> <span
+                                                        class="small-text highlight">Client</span>
                                                 </div>
                                             </div>
                                             <p>«Kevin ball tip bresaola leberkas meatball. Pastrami tongue filet mignon
@@ -715,13 +714,13 @@
                             </div>
 
 
-                           
+
                         </div>
                     </div>
                 </div>
             </section>
 
-          
+
             <section id="subscribe"
                 class="cs main_color2 background_cover overlay_color page_subscribe section_padding_top_75 section_padding_bottom_75 table_section table_section_lg">
                 <div class="container">
@@ -855,9 +854,17 @@
     </div>
     <script>
         var swiper2 = new Swiper('.swiper-products', {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
-            freeMode: true,
+            // freeMode: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },  
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -886,7 +893,7 @@
             coverflowEffect: {
                 rotate: 50,
                 stretch: 0,
-                depth: 100,
+                depth: 500,
                 modifier: 1,
                 slideShadows: true,
             },
@@ -895,9 +902,17 @@
             },
         });
         var swiper3 = new Swiper('.blog', {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
             freeMode: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },  
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -905,10 +920,18 @@
 
         });
         var swiper3 = new Swiper('.testimonial', {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 30,
             freeMode: true,
             autoplay: true,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                },
+                1024: {
+                    slidesPerView: 4,
+                },  
+            },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
